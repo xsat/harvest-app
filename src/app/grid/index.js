@@ -4,7 +4,10 @@ export default class Grid extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: []
+            available: [],
+            active: [],
+            ownUnits: [],
+            enemyUnits: []
         };
         this.handler = props.handler ?? (() => {
         });
@@ -18,16 +21,16 @@ export default class Grid extends React.Component {
                 return (
                     <div key={column}
                          className={this.isActive(row, column) ? "column active" : "column"}
-                         onMouseEnter={() => {
-                             this.setState({
-                                 active: this.generateActive(row, column)
-                             });
-                         }}
-                         onMouseLeave={() => {
-                             this.setState({
-                                 active: []
-                             });
-                         }}
+                         // onMouseEnter={() => {
+                         //     this.setState({
+                         //         active: this.generateActive(row, column)
+                         //     });
+                         // }}
+                         // onMouseLeave={() => {
+                         //     this.setState({
+                         //         active: []
+                         //     });
+                         // }}
                          onClick={() => {
                              this.handler(row, column)
                          }}>{row}:{column}</div>
