@@ -1,18 +1,30 @@
+#root {
+    font-size: xx-large;
+}
+
 .row {
-    border: 0.1em solid;
+    /*border: 0.1em solid;*/
     display: table;
 }
 
 .column {
-    border: 0.1em solid;
+    border: 0.1em dotted grey;
     display: inline-block;
     padding: 0.5em;
     cursor: pointer;
+    margin-left: -0.1em;
+    margin-bottom: -0.1em;
+    position: relative;
+    z-index: 1;
 }
 
 .active {
-    border-color: yellow;
+    border-color: green;
+    border-style: solid;
+    z-index: 2;
 }
+
 .active:hover {
     border-color: red;
+    z-index: 3;
 }
