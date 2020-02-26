@@ -9,11 +9,12 @@ export default class Action extends React.Component {
 
     render() {
         const title = this.props.title ?? '';
+        const cost = this.props.cost ?? 0;
 
         return (
             <button onClick={() => {
                 this.handler();
-            }}>{title}</button>
+            }}>{title}{cost > 0 ?  ` (${cost})` : null}</button>
         );
     }
 }
